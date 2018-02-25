@@ -20,7 +20,7 @@ end
 def generate_thumbnails(dir)
   Dir.mkdir "#{dir}/thumbs" unless Dir.exists? "#{dir}/thumbs"
   list_files(dir).each do |filename|
-    generate_thumbnail dir, filename
+    generate_thumbnail dir, filename if filename.end_with?('.jpg')
   end
 end
 
