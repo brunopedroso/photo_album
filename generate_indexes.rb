@@ -1,5 +1,8 @@
 require './utils'
 require 'json'
+require 'fileutils'
+
+include FileUtils
 
 def writeJson(file, dir)
   elements = list_files(dir).map do |filename|
@@ -18,6 +21,7 @@ def generate_index_files
     File.open("./albuns/#{dir}/index.json", 'w') do |f|
       writeJson f, "albuns/#{dir}"
     end
+    FileUtils.cp('index_album.html', "./albuns/#{dir}/index.html")
   end
 end
 
