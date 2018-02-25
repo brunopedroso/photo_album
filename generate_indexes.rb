@@ -26,9 +26,9 @@ def writeJson(file, dir)
 end
 
 def generate_index_files
-  dirs('.').each do |dir|
-    File.open("#{dir}/index.json", 'w') do |f|
-      writeJson f, dir
+  dirs('./albuns').each do |dir|
+    File.open("./albuns/#{dir}/index.json", 'w') do |f|
+      writeJson f, "albuns/#{dir}"
     end
   end
 end
