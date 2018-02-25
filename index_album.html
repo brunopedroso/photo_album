@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.0.2/dist/css/lightgallery.css">
+    <style type="text/css">
+      .thumb {
+        width: 100px;
+        margin: 0.2em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="lightgallery">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.0.2/dist/js/lightgallery.min.js"></script>
+
+    <script src='index.json'></script>
+    <script type="text/javascript">
+      // console.log(window.photos)
+
+      window.photos.forEach(function(img) {
+        var el = $("<a href='" + img.img + "'>");
+        el.append($("<img class='thumb' src='" + img.thumb + "'>"));
+        $('#lightgallery').append(el);
+      })
+
+      lightGallery(document.getElementById('lightgallery'));
+
+    </script>
+
+  </body>
+
+</html>
