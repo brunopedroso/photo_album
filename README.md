@@ -1,0 +1,1 @@
+This is a simple ruby/bash script set I made to host a photo album as a static hosted website in aws s3
